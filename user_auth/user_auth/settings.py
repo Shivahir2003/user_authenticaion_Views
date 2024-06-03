@@ -131,4 +131,4 @@ EMAIL_USE_TLS = False
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'shivahir0114@gmail.com'
-EMAIL_HOST_PASSWORD ='faak rvlj jfnh fenm'
+EMAIL_HOST_PASSWORD ='password'
