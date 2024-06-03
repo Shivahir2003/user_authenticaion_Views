@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login </title>
+</head>
+<body>
+    <h1>User login form </h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        {{field.label_tag}}
+        <br>
+        {{field}}
+        <br>
+        {% if field.errors %}
+        {{field.errors}}
+        {% endif %}
+    {% endfor %}
+        <input type="submit" value="login">
+    </form>
+    <p>don't have account <a href="{% url 'signup' %}">signup</a></p>
+</body>
+</html>
