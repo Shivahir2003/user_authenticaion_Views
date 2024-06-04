@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
+from accounts.forms import UserSignUpForm
+
 # Create your views here.
 
 def index(request):
@@ -33,11 +35,11 @@ def signupview(request):
         
     """
     if request.method == 'POST':
-        form= UserCreationForm(request.POST)
+        form= UserSignUpForm(request.POST)
         if form.is_valid():
             form.save()
     else :
-        form = UserCreationForm()
+        form = UserSignUpForm()
     return render(request, 'accounts/signup.html',{'form':form})
 
 @login_required
@@ -51,5 +53,4 @@ def dashboard(request):
         Returns:
             In Get: render a page
     """
-    print(request.user.pk)
     return render(request,'accounts/index.html')
